@@ -1,4 +1,116 @@
+/* Investigué esto en google */
+@keyframes slideUp {
+    from {
+        transform: translateY(50%);
+        opacity: 0.5;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
-h1 {
+@keyframes slideDown {
+    from {
+        transform: translateY(-50%);
+        opacity: 0.5;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@font-face {
+    font-famil: 'SF Pro Regular';
+    src: url('../assets/fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Thin Italic';
+    src: url('../assets/fonts/SFPRODISPLAYTHINITALIC.OTF') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: #100027;
+    width: 100vw;
+    height: 100vh;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #1a0042;
+    width: 100%;
+    height: 90px;
+    /* parámetros: animationName duration timingFunction fillMode 
+     * timingFunction -> ease-out, linear, ease-in, ease-in-out
+     * fillMode -> cambia el CSS para después o antes de la animación
+     * */
+    animation: slideDown 0.75s ease-out forwards;
+}
+
+.topbar-title {
+    font-size: 30px;
+    color: #c0defc;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    margin-left: 20px;
+    font-family: 'SF Pro Thin Italic';
+    flex: 1;
+}
+
+.topbar-spacer {
+    flex: 1;
+}
+
+.content-title {
     font-size: 50px;
+    color: #c0defc;
+    opacity: 0;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    margin-left: 20px;
+    font-family: 'SF Pro Thin Italic';
+    animation: slideUp 0.5s ease-out forwards;
+    animation-delay: 0.75s;
+}
+
+.topbar-search {
+    font-size: 24px;
+    color: #c0defc;
+    border: none;
+    background-color: #2e0074;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    padding: 5px;
+    font-family: 'SF Pro Regular';
+    max-width: 400px;
+    text-align: center;
+}
+
+.topbar-search:focus {
+    outline: none;
 }
