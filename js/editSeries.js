@@ -41,11 +41,38 @@ async function loadSeriesData() {
     imageUrlInput.value = serie.img_src
 }
 
+async function deleteSeries(event) {
+    event?.preventDefault()
+
+    document.querySelector(".content-form-buttons").querySelector(".content-form-submit").disabled = true
+    document.querySelector(".content-form-buttons").querySelector(".content-form-delete").disabled = true
+
+    const currentID = getCurrentSeriesID()
+    const seriesName = document.querySelector(".content-title").textContent.slice(16)
+    if (confirm(`¿Está seguro que desea eliminar la serie ${seriesName}?`)) {
+        const resp = await fetch(`${API_URL}/${currentID}`, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+
+        const data = await resp.json().catch(() => null)
+        if (!resp.ok) {
+            throw new Error(data?.Error || "Error eliminando la serie actual")
+        } else {
+            alert(`Serie ${seriesName} eliminada exitosamente`)
+            window.location.href = "../"
+        }
+    }
+}
+
+
 async function putSeries(event) {
     event?.preventDefault()
 
-    const form = document.querySelector(".content-form")
-    const submitButton = form.querySelector(".content-form-submit")
+    const formButtonsDiv = document.querySelector(".content-form-buttons")
+    const submitButton = formButtonsDiv.querySelector(".content-form-submit")
     const currentID = getCurrentSeriesID()
 
     const nameInput = document.querySelector("#series-name")
@@ -112,10 +139,14 @@ async function putSeries(event) {
 }
 
 window.putSeries = putSeries
+window.deleteSeries = deleteSeries
 
 window.addEventListener("load", async () => {
     const submitButton = document.querySelector(".content-form-submit")
     submitButton.style.width = "150px"
+
+    const deleteButton = document.querySelector(".content-form-delete")
+    deleteButton.addEventListener("click", deleteSeries)
 
     const form = document.querySelector(".content-form")
     form.addEventListener("submit", putSeries)

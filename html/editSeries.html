@@ -29,7 +29,10 @@
                     <input id="series-total-episodes" name="total_episodes" type="number" min="1" required/>
                     <h2>Portada (enlace a imagen)</h2>
                     <input id="series-image-url" name="img_src" type="url"/>
-                    <button class="content-form-submit" type="submit">Confirmar</button>
+                    <div class="content-form-buttons">
+                        <button class="content-form-submit" type="submit">Confirmar</button>
+                        <button class="content-form-delete" onClick="deleteSeries">Eliminar</button>
+                    </div>
                 </form>
             </div>
         </div>

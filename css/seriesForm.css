@@ -203,3 +203,20 @@ body {
     width: 500px;
 }
 
+.content-form-buttons {
+    display: flex;
+    align-items: space-between;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.content button.content-form-delete {
+    width: 180px;
+    color: #c0defc;
+    background-color: #ad0000;
+}
+
+.content button.content-form-delete:hover {
+    background-color: #790000;
+}

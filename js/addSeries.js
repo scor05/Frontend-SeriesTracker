@@ -37,7 +37,7 @@ async function submitSeriesForm(event) {
 
     submitButton.disabled = true
     submitButton.textContent = "Agregando..."
-    submitButton.style.width = "150px"
+    submitButton.style.width = "165px"
 
     try {
         const response = await fetch(API_URL, {
