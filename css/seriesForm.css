@@ -74,12 +74,6 @@ body {
     animation: slideDown 0.5s ease-out forwards;
 }
 
-.topbar > * {
-    opacity: 0;
-    animation: slideDown 0.4s ease-out forwards;
-    animation-delay: 0.5s;
-}
-
 .topbar-title {
     font-size: 30px;
     color: #c0defc;
@@ -134,7 +128,7 @@ body {
     margin-left: 20px;
     font-family: 'SF Pro Thin Italic';
     animation: slideUp 0.5s ease-out forwards;
-    animation-delay: 0.75s;
+    animation-delay: 0.4s;
 }
 
 .content h2 {
@@ -144,13 +138,13 @@ body {
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
     font-family: 'SF Pro Regular';
     animation: slideUp 0.5s ease-out forwards;
-    animation-delay: 1s;
+    animation-delay: 0.35s;
 }
 
 .content button {
     font-size: 28px;
     color: #c0defc;
-    background-color: #2e0074;
+    background-color: #005c95;
     border-radius: 15px;
     width: 135px;
     height: 65px;
@@ -160,11 +154,11 @@ body {
     border: 0;
     opacity: 0;
     animation: slideUp 0.5s ease-out forwards;
-    animation-delay: 1.5s;
+    animation-delay: 0.7s;
 }
 
 .content button:hover {
-    background-color: #220054;
+    background-color: #00385b;
 }
 
 .content-form {
@@ -187,7 +181,7 @@ body {
     color: #c0defc;
     opacity: 0;
     animation: slideUp 0.5s ease-out forwards;
-    animation-delay: 1s;
+    animation-delay: 0.35s;
 }
 
 .content-form input:hover {

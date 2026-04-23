@@ -1,7 +1,7 @@
 @keyframes slideUp {
     from {
         transform: translateY(50%);
-        opacity: 0.5;
+        opacity: 0;
     }
     to {
         transform: translateY(0);
@@ -12,10 +12,19 @@
 @keyframes slideDown {
     from {
         transform: translateY(-50%);
-        opacity: 0.5;
+        opacity: 0;
     }
     to {
         transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
         opacity: 1;
     }
 }
@@ -75,12 +84,6 @@ body {
     animation: slideDown 0.5s ease-out forwards;
 }
 
-.topbar > * {
-    opacity: 0;
-    animation: slideDown 0.4s ease-out forwards;
-    animation-delay: 0.5s;
-}
-
 .topbar-title {
     font-size: 30px;
     color: #c0defc;
@@ -137,7 +140,7 @@ body {
     margin-left: 20px;
     font-family: 'SF Pro Thin Italic';
     animation: slideUp 0.5s ease-out forwards;
-    animation-delay: 0.75s;
+    animation-delay: 0.35s;
 }
 
 .content-table-wrapper {
@@ -148,8 +151,8 @@ body {
     background: #1a0042;
     overflow: hidden;
     opacity: 0;
-    animation: slideUp 0.75s ease-out forwards;
-    animation-delay: 1.2s;
+    animation: fadeIn 0.75s ease-out forwards;
+    animation-delay: 0.5s;
 }
 
 .content-table {
@@ -172,6 +175,7 @@ body {
 .content-table .content-table-row {
     cursor: pointer;
 }
+
 
 .content-table tr:nth-child(odd) th,
 .content-table tr:nth-child(odd) td {
@@ -227,11 +231,8 @@ body {
 .content-table tr p {
     font-size: 24px;
     color: #c0defc;
-    opacity: 0;
     font-family: 'SF Pro Regular';
-    animation: slideUp 0.5s ease-out forwards;
     text-align: center;
-    animation-delay: 1.2s;
 }
 
 .content-table .series-description {
@@ -275,6 +276,10 @@ body {
     height: 80px;
 }
 
+.content-table .content-table-empty-row td {
+    height: 40px;
+}
+
 .content-controls {
     display: flex;
     width: min(1200px, calc(100% - 32px));
@@ -301,7 +306,7 @@ body {
     border: 0;
     animation: slideUp 0.5s ease-out forwards;
     margin-bottom: -10px;
-    animation-delay: 1.5s;
+    animation-delay: 0.35s;
 }
 
 .content-addSeries:hover {
@@ -320,6 +325,6 @@ body {
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
     color: #c0defc;
     animation: slideUp 0.5s ease-out forwards;
-    animation-delay: 1.5s;
+    animation-delay: 0.35s;
     margin-bottom: -25px;
 }
