@@ -169,6 +169,10 @@ body {
     height: 50px;
 }
 
+.content-table .content-table-row {
+    cursor: pointer;
+}
+
 .content-table tr:nth-child(odd) th,
 .content-table tr:nth-child(odd) td {
     background-color: #260060;
@@ -201,6 +205,19 @@ body {
     padding: 12px;
     text-align: center;
     vertical-align: middle;
+    transition: box-shadow 0.15s ease;
+}
+
+.content-table .content-table-row:hover td {
+    box-shadow: inset 0 2px 0 #6d2cff, inset 0 -2px 0 #6d2cff;
+}
+
+.content-table .content-table-row:hover td:first-child {
+    box-shadow: inset 2px 2px 0 #6d2cff, inset 0 -2px 0 #6d2cff;
+}
+
+.content-table .content-table-row:hover td:last-child {
+    box-shadow: inset -2px 2px 0 #6d2cff, inset 0 -2px 0 #6d2cff;
 }
 
 .content-table tr > * {
@@ -283,6 +300,7 @@ body {
     opacity: 0;
     border: 0;
     animation: slideUp 0.5s ease-out forwards;
+    margin-bottom: -10px;
     animation-delay: 1.5s;
 }
 
@@ -293,4 +311,15 @@ body {
 
 .content-controls-spacer {
     flex: 1;
+}
+
+.content-guidetext {
+    font-size: 24px;
+    font-family: 'SF Pro Regular';
+    opacity: 0;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    color: #c0defc;
+    animation: slideUp 0.5s ease-out forwards;
+    animation-delay: 1.5s;
+    margin-bottom: -25px;
 }

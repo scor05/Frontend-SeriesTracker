@@ -1,6 +1,5 @@
 const API_URL = "http://localhost:42069/series"
 
-
 window.addEventListener('load', async () => {
     // resetear el input del topbar porque por alguna razón nunca se reseteaba
     document.querySelector(".topbar-search").value = ""
@@ -12,17 +11,35 @@ window.addEventListener('load', async () => {
     const table = document.querySelector(".content-table")
     for (const s of series) {
         const tr = document.createElement("tr")
+        tr.classList.add("content-table-row")
+        tr.addEventListener("click", () => {
+            window.location.href = `html/editSeries.html?id=${s.id_serie}`
+        })
 
         const cover = document.createElement("td")
-        const img = document.createElement("img")
-        img.setAttribute("src", s.img_src)
-        cover.appendChild(img)
+        if (s.img_src != "") {
+            const img = document.createElement("img")
+            img.setAttribute("src", s.img_src)
+            cover.appendChild(img)
+        } else {
+            const img = document.createElement("p")
+            img.textContent = "No se encontro una portada"
+            cover.appendChild(img)
+        }
 
         const text_desc = document.createElement("td")
-        const text_descElement = document.createElement("p")
-        text_descElement.classList.add("series-description")
-        text_descElement.append(s.name, document.createElement("br"), document.createElement("br"), s.description)
-        text_desc.appendChild(text_descElement)
+        if (s.description != "") {
+            const text_descElement = document.createElement("p")
+            text_descElement.classList.add("series-description")
+            text_descElement.append(s.name, document.createElement("br"), document.createElement("br"), s.description)
+            text_desc.appendChild(text_descElement)
+        } else {
+            const text_descElement = document.createElement("p")
+            text_descElement.classList.add("series-description")
+            text_descElement.append(s.name, document.createElement("br"), document.createElement("br"), "No se proveyó descripción")
+            text_desc.appendChild(text_descElement)
+        }
+
         const current_episode = document.createElement("td")
         const current_episodeElement = document.createElement("p")
         current_episodeElement.textContent = s.current_episode
