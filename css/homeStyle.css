@@ -22,7 +22,7 @@
 }
 
 @font-face {
-    font-famil: 'SF Pro Regular';
+    font-family: 'SF Pro Regular';
     src: url('../assets/fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
     font-weight: normal;
     font-style: normal;
@@ -50,14 +50,6 @@
     height: 100vh;
 }
 
-.content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-}
 
 .topbar {
     display: flex;
@@ -71,7 +63,13 @@
      * timingFunction -> ease-out, linear, ease-in, ease-in-out
      * fillMode -> cambia el CSS para después o antes de la animación
      * */
-    animation: slideDown 0.75s ease-out forwards;
+    animation: slideDown 0.5s ease-out forwards;
+}
+
+.topbar > * {
+    opacity: 0;
+    animation: slideDown 0.4s ease-out forwards;
+    animation-delay: 0.5s;
 }
 
 .topbar-title {
@@ -87,6 +85,40 @@
     flex: 1;
 }
 
+.topbar-search {
+    font-size: 24px;
+    color: #c0defc;
+    border-top: 0;
+    border-right: 0;
+    border-left: 0;
+    border-bottom: 2px solid #2e0074;
+    background-color: transparent;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    padding: 5px;
+    font-family: 'SF Pro Regular';
+    max-width: 400px;
+    text-align: center;
+}
+
+.topbar-search:hover {
+    background-color: #220054;
+    border-radius: 10px 10px 0 0;
+}
+
+.topbar-search:focus {
+    outline: none;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    gap: 20px;
+}
+
 .content-title {
     font-size: 50px;
     color: #c0defc;
@@ -98,19 +130,102 @@
     animation-delay: 0.75s;
 }
 
-.topbar-search {
-    font-size: 24px;
-    color: #c0defc;
-    border: none;
-    background-color: #2e0074;
-    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+.content-table {
+    width: 1200px;
+    height: 600px;
     border-radius: 15px;
-    padding: 5px;
-    font-family: 'SF Pro Regular';
-    max-width: 400px;
-    text-align: center;
+    border-collapse: collapse;
+    border: 2px solid #2e0074;
+    background: #1a0042;
+    padding: 10px;
+    opacity: 0;
+    animation: slideUp 0.75s ease-out forwards;
+    animation-delay: 1s;
 }
 
-.topbar-search:focus {
-    outline: none;
+.content-table * {
+    text-shadow: 0 0 5px rgba(0,0,0,0.65);
+}
+
+.content-table tr:nth-child(odd) {
+    background-color: #260060;
+}
+
+.content-table tr:nth-child(even) {
+    background-color: #300078;
+}
+
+.content-table th {
+    border: 2px solid #2e0074; 
+    background: transparent;
+    padding: 12px;
+    font-size: 20px;
+    color: #c0defc;
+    opacity: 0;
+    font-family: 'SF Pro Thin Italic';
+    animation: slideUp 0.5s ease-out forwards;
+    text-align: center;
+    animation-delay: 1.2s;
+}
+
+/* Portada */
+.content-table tr *:nth-child(1) {
+    width: 350px;
+    height: 250px;
+    background-size: 100% 100%;
+}
+
+/* Nombre y desc */
+.content-table tr *:nth-child(2) {
+    width: 500px;
+    height: 250px;
+}
+
+/* Ep actual y totales */
+.content-table tr *:nth-child(3), .content-table tr *:nth-child(4) {
+    width: 100px;
+    height: 250px;
+}
+
+/* Rating */
+.content-table tr *:nth-child(5) {
+    width: 150px;
+    height: 250px;
+}
+
+.content-controls {
+    display: flex;
+    width: 1200px;
+    height: 100px;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.content-addSeries {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'SF Pro Regular';
+    font-size: 20px;
+    text-shadow: 0 0 5px rgba(0,0,0,0.65);
+    color: #c0defc;
+    text-decoration: none;
+    background-color: #2e0074;
+    border-radius: 20px;
+    width: 140px;
+    height: 50px;
+    opacity: 0;
+    border: 0;
+    animation: slideUp 0.5s ease-out forwards;
+    animation-delay: 1.3s;
+}
+
+.content-addSeries:hover {
+    background-color: #220054;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+
+.content-controls-spacer {
+    flex: 1;
 }
