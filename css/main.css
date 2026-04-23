@@ -1,4 +1,3 @@
-/* Investigué esto en google */
 @keyframes slideUp {
     from {
         transform: translateY(50%);
@@ -40,14 +39,24 @@
     padding: 0px;
 }
 
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    overflow-y: auto;
+    background-color: #100027;
+}
+
 .root {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
     background-color: #100027;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
 }
 
 
@@ -112,10 +121,11 @@
 .content {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    flex: 1 0 auto;
+    padding: 20px 0 40px;
     gap: 20px;
 }
 
@@ -131,20 +141,20 @@
 }
 
 .content-table-wrapper {
-    width: 1200px;
-    height: 600px;
+    width: min(1200px, calc(100% - 32px));
+    height: auto;
     border-radius: 15px;
     border: 2px solid #2e0074;
     background: #1a0042;
     overflow: hidden;
     opacity: 0;
     animation: slideUp 0.75s ease-out forwards;
-    animation-delay: 1s;
+    animation-delay: 1.2s;
 }
 
 .content-table {
     width: 100%;
-    height: 100%;
+    height: auto;
     border-collapse: separate;
     border-spacing: 0;
     border: 0;
@@ -176,11 +186,8 @@
     padding: 12px;
     font-size: 28px;
     color: #c0defc;
-    opacity: 0;
     font-family: 'SF Pro Thin Italic';
-    animation: slideUp 0.5s ease-out forwards;
     text-align: center;
-    animation-delay: 1.2s;
 }
 
 .content-table th:last-child,
@@ -189,8 +196,8 @@
 }
 
 .content-table td {
-    border-right: 2px solid #2e0074;
-    border-bottom: 2px solid #2e0074;
+    border-right: 2px solid #330080;
+    border-bottom: 2px solid #330080;
     padding: 12px;
     text-align: center;
     vertical-align: middle;
@@ -253,7 +260,7 @@
 
 .content-controls {
     display: flex;
-    width: 1200px;
+    width: min(1200px, calc(100% - 32px));
     height: 100px;
     align-items: flex-end;
     justify-content: space-between;
@@ -276,7 +283,7 @@
     opacity: 0;
     border: 0;
     animation: slideUp 0.5s ease-out forwards;
-    animation-delay: 1.3s;
+    animation-delay: 1.5s;
 }
 
 .content-addSeries:hover {

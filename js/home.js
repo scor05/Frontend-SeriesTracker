@@ -1,4 +1,4 @@
-
+const API_URL = "http://localhost:42069/series"
 
 
 window.addEventListener('load', async () => {
@@ -6,7 +6,7 @@ window.addEventListener('load', async () => {
     document.querySelector(".topbar-search").value = ""
 
     // load inicial
-    const resp = await fetch("http://localhost:42069/series")
+    const resp = await fetch(API_URL)
     const series = await resp.json()
 
     const table = document.querySelector(".content-table")
@@ -33,13 +33,13 @@ window.addEventListener('load', async () => {
         total_episodesElement.textContent = s.total_episodes
         total_episodes.appendChild(total_episodesElement)
 
+        /*
         const rating = document.createElement("td")
         const ratingElement = document.createElement("p")
         ratingElement.textContent = "Working on it"
         rating.appendChild(ratingElement)
-
-        tr.append(cover, text_desc, current_episode, total_episodes, rating)
+        */
+        tr.append(cover, text_desc, current_episode, total_episodes)
         table.appendChild(tr)
     }
-
 })

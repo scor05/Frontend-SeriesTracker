@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="icon" href="data:,">
+        <link rel="stylesheet" href="../css/addSeries.css"/>
+        <script src="../js/addSeries.js" defer></script>
+        <meta charset="UTF-8" name="viewport" content="width=device-width"/>
+        <title>My Series Tracker</title>
+    </head>
+
+    <body>
+        <div class="root">
+            <div class="topbar">
+                <h1 class="topbar-title">Series Tracker</h1>
+                <div class="topbar-spacer"></div>
+                <a class="topbar-backbutton" href="../">Back</a>
+            </div>
+            <div class="content">
+                <h1 class="content-title">Agregar una Serie</h1>
+                <form class="content-form">
+                    <h2>Nombre de la Serie</h2>
+                    <input id="series-name" name="name" type="text" maxlength="50" placeholder="The Boys" required/>
+                    <h2>Descripción</h2>
+                    <input id="series-description" name="description" type="text" maxlength="200" placeholder="A series about anti-superheroes..."/>
+                    <h2>Episodio Actual</h2>
+                    <input id="series-current-episode" name="current_episode" type="number" min="0" placeholder="2" required/>
+                    <h2>Total de episodios</h2>
+                    <input id="series-total-episodes" name="total_episodes" type="number" min="1" placeholder="50" required/>
+                    <h2>Portada (enlace a imagen)</h2>
+                    <input id="series-image-url" name="img_src" type="url" placeholder="https://example.com/images/theboys.png" required/>
+                    <button class="content-form-submit" type="submit">Agregar</button>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

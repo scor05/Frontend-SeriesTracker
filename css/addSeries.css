@@ -1,0 +1,205 @@
+@keyframes slideUp {
+    from {
+        transform: translateY(50%);
+        opacity: 0.5;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50%);
+        opacity: 0.5;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@font-face {
+    font-family: 'SF Pro Regular';
+    src: url('../assets/fonts/SFPRODISPLAYREGULAR.OTF') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SF Pro Thin Italic';
+    src: url('../assets/fonts/SFPRODISPLAYTHINITALIC.OTF') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    background-color: #100027;
+}
+
+.root {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    background-color: #100027;
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #1a0042;
+    width: 100%;
+    height: 90px;
+    /* parámetros: animationName duration timingFunction fillMode 
+     * timingFunction -> ease-out, linear, ease-in, ease-in-out
+     * fillMode -> cambia el CSS para después o antes de la animación
+     * */
+    animation: slideDown 0.5s ease-out forwards;
+}
+
+.topbar > * {
+    opacity: 0;
+    animation: slideDown 0.4s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.topbar-title {
+    font-size: 30px;
+    color: #c0defc;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    margin-left: 20px;
+    font-family: 'SF Pro Thin Italic';
+    flex: 1;
+}
+
+.topbar-backbutton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    text-decoration: 0;
+    color: #c0defc;
+    background-color: #2e0074;
+    border-radius: 15px;
+    border: 0;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    font-family: 'SF Pro Regular';
+    width: 100px;
+    height: 50px;
+    margin: 15px;
+    margin-right: 20px;
+}
+
+.topbar-backbutton:hover {
+    background-color: #220054;
+}
+
+.topbar-spacer {
+    flex: 1;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    width: 100%;
+    flex: 1 0 auto;
+    padding: 20px 0 40px;
+    gap: 20px;
+}
+
+.content-title {
+    font-size: 50px;
+    color: #c0defc;
+    opacity: 0;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    margin-left: 20px;
+    font-family: 'SF Pro Thin Italic';
+    animation: slideUp 0.5s ease-out forwards;
+    animation-delay: 0.75s;
+}
+
+.content h2 {
+    font-size: 26px;
+    color: #c0defc;
+    opacity: 0;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+    font-family: 'SF Pro Regular';
+    animation: slideUp 0.5s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.content button {
+    font-size: 30px;
+    color: #c0defc;
+    background-color: #2e0074;
+    border-radius: 15px;
+    width: 135px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    opacity: 0;
+    animation: slideUp 0.5s ease-out forwards;
+    animation-delay: 1.5s;
+}
+
+.content button:hover {
+    background-color: #220054;
+}
+
+.content-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 25px;
+    gap: 50px;
+}
+
+.content-form input {
+    background-color: #2e0074;
+    border-radius: 15px;
+    text-align: center;
+    border: 0;
+    padding: 10px;
+    font-size: 18px;
+    margin-top: -25px;
+    color: #c0defc;
+    opacity: 0;
+    animation: slideUp 0.5s ease-out forwards;
+    animation-delay: 1s;
+}
+
+.content-form input:hover {
+    background-color: #220054;
+}
+
+.content-form input:focus {
+    outline: 2px solid #4500ad;
+    background-color: #2e0074;
+}
+
+#series-description {
+    width: 500px;
+}
+
