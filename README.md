@@ -6,7 +6,9 @@ Este es el repositorio con el código client-side para mi proyecto #1 de la clas
 ### Instrucciones de ejecución 
 Este repositorio está diseñado para ir en conjunto con [este otro repositorio de backend hecho con Go](https://github.com/scor05/Backend-SeriesTracker), el cual también dentro de su `README.md` tiene instrucciones para su ejecución.
 
-Para ejecutar el código de este repositorio, se puede hacer de varias formas, pero en esencia se necesita un servidor de HTTP que pueda ejecutar el código de HTML. En el desarrollo de este proyecto, se utilizó el servidor de HTTP integrado de python, `python3 -m http.server`, el cual se debe de correr dentro de la carpeta `html/`. 
+Para ejecutar el código de este repositorio, se puede hacer de varias formas, pero en esencia se necesita un servidor de HTTP que pueda ejecutar el código de HTML. En el desarrollo de este proyecto, se utilizó el servidor de HTTP integrado de python, `python3 -m http.server`, el cual se debe de correr desde la carpeta root.
+
+Este frontend también es visible en [este servidor](https://joelsiervas.online/24472/SeriesTracker/)
 
 ---
 ## Challenges Implementados

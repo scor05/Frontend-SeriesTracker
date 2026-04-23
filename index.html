@@ -4,6 +4,7 @@
     <head>
         <link rel="icon" href="data:,">
         <link rel="stylesheet" href="css/homeStyle.css"/>
+        <script src="js/home.js" defer></script>
         <meta charset="UTF-8" name="viewport" content="width=device-width"/>
         <title>My Series Tracker</title>
     </head>
@@ -18,20 +19,22 @@
             <div class="content">
                 <h1 class="content-title">My Series Tracker</h1>
                 <div class="content-controls">
-                    <div class="content-pagination">TODO</div>
+                    <div class="content-pagination"></div>
                     <a class="content-addSeries" href="html/addSeries.html">
                         + Agregar
                     </a>
                 </div>
-                <table class="content-table">
-                    <tr>
-                        <th>Portada</th>
-                        <th>Nombre y Descripción</th>
-                        <th>Episodio actual</th>
-                        <th>Episodios Totales</th>
-                        <th>Rating</th> 
-                    </tr>
-                </table>
+                <div class="content-table-wrapper">
+                    <table class="content-table">
+                        <tr>
+                            <th>Portada</th>
+                            <th>Nombre y Descripción</th>
+                            <th>Episodio actual</th>
+                            <th>Episodios Totales</th>
+                            <th>Rating</th>
+                        </tr>
+                    </table>
+                </div>
             </div>
         </div>
     </body>

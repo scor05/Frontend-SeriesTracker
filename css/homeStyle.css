@@ -130,34 +130,45 @@
     animation-delay: 0.75s;
 }
 
-.content-table {
+.content-table-wrapper {
     width: 1200px;
     height: 600px;
     border-radius: 15px;
-    border-collapse: collapse;
     border: 2px solid #2e0074;
     background: #1a0042;
-    padding: 10px;
+    overflow: hidden;
     opacity: 0;
     animation: slideUp 0.75s ease-out forwards;
     animation-delay: 1s;
+}
+
+.content-table {
+    width: 100%;
+    height: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 0;
+    background: transparent;
 }
 
 .content-table * {
     text-shadow: 0 0 5px rgba(0,0,0,0.65);
 }
 
-.content-table tr:nth-child(odd) {
+.content-table tr:nth-child(odd) th,
+.content-table tr:nth-child(odd) td {
     background-color: #260060;
 }
 
-.content-table tr:nth-child(even) {
+.content-table tr:nth-child(even) th, 
+.content-table tr:nth-child(even) td {
     background-color: #300078;
 }
 
 .content-table th {
-    border: 2px solid #2e0074; 
     background: transparent;
+    border-right: 2px solid #2e0074;
+    border-bottom: 2px solid #2e0074;
     padding: 12px;
     font-size: 20px;
     color: #c0defc;
@@ -168,27 +179,33 @@
     animation-delay: 1.2s;
 }
 
+.content-table th:last-child,
+.content-table td:last-child {
+    border-right: 0;
+}
+
 /* Portada */
-.content-table tr *:nth-child(1) {
+.content-table tr > *:nth-child(1) {
     width: 350px;
     height: 250px;
     background-size: 100% 100%;
 }
 
 /* Nombre y desc */
-.content-table tr *:nth-child(2) {
+.content-table tr > *:nth-child(2) {
     width: 500px;
     height: 250px;
 }
 
 /* Ep actual y totales */
-.content-table tr *:nth-child(3), .content-table tr *:nth-child(4) {
+.content-table tr > *:nth-child(3),
+.content-table tr > *:nth-child(4) {
     width: 100px;
     height: 250px;
 }
 
 /* Rating */
-.content-table tr *:nth-child(5) {
+.content-table tr > *:nth-child(5) {
     width: 150px;
     height: 250px;
 }
